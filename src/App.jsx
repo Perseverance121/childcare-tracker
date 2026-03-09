@@ -478,7 +478,7 @@ export default function ChildcareTracker() {
   const annualSaving = effectiveHourly * freeHrs * TERM_WEEKS;
   const annualYouPay = effectiveHourly * paidHrs * TERM_WEEKS;
 
-  const TABS = [["dashboard", "Overview"], ["income", "Income & Tax"], ["betteroff", "Better Off?"], ["settings", "Settings"]];
+  const TABS = [["dashboard", "Overview"], ["income", "Income & Tax"], ["betteroff", "Better Off?"], ["settings", "Settings"], ["guides", "Guides"]];
 
   return (
     <div style={{ minHeight: "100vh", background: T.bg, color: T.text, fontFamily: SANS }}>
@@ -748,6 +748,93 @@ export default function ChildcareTracker() {
             </div>
           </div>
         )}
+
+        {activeTab === "guides" && (
+          <div style={{ maxWidth: 900, margin: "0 auto", padding: "32px 24px 64px" }}>
+            <div style={{ marginBottom: 32 }}>
+              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: T.accent, marginBottom: 8, fontFamily: SANS }}>Childcare Guides</div>
+              <div style={{ fontFamily: SERIF, fontSize: 22, fontWeight: 400, color: T.text, marginBottom: 8 }}>Free guides for working parents</div>
+              <div style={{ fontSize: 14, color: T.textSub }}>Everything you need to know about 30-hour free childcare and Tax-Free Childcare — from eligibility rules to salary sacrifice strategies.</div>
+            </div>
+
+            {[
+              { category: "Eligibility", colour: T.green, links: [
+                { slug: "30-hour-free-childcare-eligibility", label: "30-Hour Free Childcare Eligibility", desc: "Do you qualify? Income rules, age requirements and how to apply." },
+                { slug: "free-childcare-2-year-olds", label: "Free Childcare for 2 Year Olds", desc: "Working parents of 2-year-olds can now claim 15 free hours per week." },
+                { slug: "free-childcare-maternity-leave", label: "Free Childcare on Maternity Leave", desc: "Maternity leave automatically passes the minimum earnings test." },
+                { slug: "free-childcare-self-employed", label: "Free Childcare if Self-Employed", desc: "How HMRC assesses self-employed earnings and the start-up exception." },
+                { slug: "free-childcare-single-parents", label: "Free Childcare for Single Parents", desc: "Single parents only need to meet the criteria themselves." },
+                { slug: "15-hours-vs-30-hours-free-childcare", label: "15 Hours vs 30 Hours: What's the Difference?", desc: "All children get 15 hours. Working parents can get 30." },
+              ]},
+              { category: "Tax & Salary Sacrifice", colour: T.accent, links: [
+                { slug: "adjusted-net-income", label: "What is Adjusted Net Income?", desc: "The £100,000 childcare limit is based on this figure — not your gross salary." },
+                { slug: "salary-sacrifice-childcare", label: "How Salary Sacrifice Affects Eligibility", desc: "Pension, cycle to work and EV schemes all reduce your adjusted net income." },
+                { slug: "pension-contributions-childcare", label: "Pension Contributions & Childcare", desc: "The most powerful tool for parents earning near £100,000." },
+                { slug: "electric-car-salary-sacrifice-childcare", label: "Electric Car Salary Sacrifice & Childcare", desc: "How EV leasing reduces your adjusted net income. 2% BIK rate for 2024/25." },
+                { slug: "tax-free-childcare-vs-vouchers", label: "Tax-Free Childcare vs Childcare Vouchers", desc: "Which saves more? And can you still switch?" },
+                { slug: "universal-credit-childcare", label: "Universal Credit & Free Childcare", desc: "UC can cover up to 85% of childcare costs — how it interacts with TFC." },
+              ]},
+              { category: "How To", colour: "#5b6fa8", links: [
+                { slug: "how-to-apply-tax-free-childcare", label: "How to Apply for Tax-Free Childcare", desc: "Step-by-step guide to the HMRC Childcare Service portal." },
+                { slug: "childcare-term-dates", label: "30-Hour Childcare Term Dates 2025", desc: "When does your child actually become eligible? The term-date system explained." },
+                { slug: "reconfirm-tax-free-childcare", label: "How to Reconfirm Every 3 Months", desc: "Miss this and your account is suspended. Here's how to stay on top of it." },
+                { slug: "what-can-tax-free-childcare-be-used-for", label: "What Can Tax-Free Childcare Pay For?", desc: "Nurseries, childminders, holiday clubs, after-school care and nannies." },
+                { slug: "tax-free-childcare-nannies", label: "Using Tax-Free Childcare for a Nanny", desc: "It's possible — but the nanny must be registered through an Ofsted agency." },
+                { slug: "childcare-cost-calculator", label: "How Our Childcare Calculator Works", desc: "What the calculator shows, how the maths works, and its limitations." },
+              ]},
+              { category: "By Region", colour: T.textSub, links: [
+                { slug: "free-childcare-scotland", label: "Free Childcare in Scotland", desc: "Scotland's ELC scheme offers 1,140 hours/year to all 3-4 year olds." },
+                { slug: "free-childcare-wales", label: "Free Childcare in Wales", desc: "The Childcare Offer for Wales covers 48 weeks — more than England." },
+              ]},
+            ].map(({ category, colour, links }) => (
+              <div key={category} style={{ marginBottom: 36 }}>
+                <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: colour, marginBottom: 14, fontFamily: SANS }}>{category}</div>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 10 }}>
+                  {links.map(({ slug, label, desc }) => (
+                    <a key={slug} href={`/${slug}`} style={{ background: T.surface, border: `1px solid ${T.border}`, borderRadius: 10, padding: "14px 16px", textDecoration: "none", display: "block", transition: "border-color 0.15s" }}
+                      onMouseEnter={e => e.currentTarget.style.borderColor = T.accent}
+                      onMouseLeave={e => e.currentTarget.style.borderColor = T.border}>
+                      <div style={{ fontSize: 14, fontWeight: 500, color: T.text, marginBottom: 4, fontFamily: SANS }}>{label}</div>
+                      <div style={{ fontSize: 12, color: T.textMuted, lineHeight: 1.5 }}>{desc}</div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* ── Footer ─────────────────────────────────────────────── */}
+        <div style={{ borderTop: `1px solid ${T.border}`, padding: "24px 32px", marginTop: 16 }}>
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "6px 20px", justifyContent: "center", marginBottom: 12 }}>
+              {[
+                ["30-hour-free-childcare-eligibility","30-Hour Eligibility"],
+                ["childcare-term-dates","Term Dates 2025"],
+                ["adjusted-net-income","Adjusted Net Income"],
+                ["salary-sacrifice-childcare","Salary Sacrifice"],
+                ["how-to-apply-tax-free-childcare","How to Apply"],
+                ["tax-free-childcare-vs-vouchers","TFC vs Vouchers"],
+                ["free-childcare-maternity-leave","Maternity Leave"],
+                ["free-childcare-self-employed","Self-Employed"],
+                ["free-childcare-single-parents","Single Parents"],
+                ["reconfirm-tax-free-childcare","Reconfirmation"],
+                ["free-childcare-scotland","Scotland"],
+                ["free-childcare-wales","Wales"],
+              ].map(([slug, label]) => (
+                <a key={slug} href={`/${slug}`} style={{ fontSize: 12, color: T.textMuted, textDecoration: "none" }}
+                  onMouseEnter={e => e.currentTarget.style.color = T.accent}
+                  onMouseLeave={e => e.currentTarget.style.color = T.textMuted}>
+                  {label}
+                </a>
+              ))}
+              </div>
+            <div style={{ textAlign: "center", fontSize: 11, color: T.textMuted }}>
+              © 2025 freechildcarehours.co.uk · For informational purposes only · Always verify at <a href="https://www.gov.uk/tax-free-childcare" style={{ color: T.textMuted }}>gov.uk</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   );
