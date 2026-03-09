@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Childcare Cost Calculator: How Much Will You Save? | freechildcarehours.co.uk</title>
+  <meta name="description" content="Calculate exactly how much you'll save with 30-hour free childcare and Tax-Free Childcare. See your annual saving, monthly household income, and salary sacrifice impact." />
+  <link rel="canonical" href="https://freechildcarehours.co.uk/childcare-cost-calculator" />
+  <meta property="og:title" content="How Much Will You Save? Use Our Free Childcare Cost Calculator" /><meta property="og:description" content="Calculate exactly how much you'll save with 30-hour free childcare and Tax-Free Childcare. See your annual saving, monthly household income, and salary sacrifice impact." />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1916647438314976" crossorigin="anonymous"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate is the childcare calculator?","acceptedAnswer":{"@type":"Answer","text":"The calculator uses 2024/25 UK tax rates and HMRC rules to provide accurate estimates for standard PAYE employees. Results may vary for those with complex tax situations."}},{"@type":"Question","name":"Does the calculator work for self-employed parents?","acceptedAnswer":{"@type":"Answer","text":"The income and eligibility checks work for self-employed parents, but the take-home pay calculation is designed for PAYE. Self-employed parents should use their net profit figure."}},{"@type":"Question","name":"Is the calculator free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes — completely free, with no sign-up required. Your data is stored only on your own device."}}]}</script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg: #fafaf8; --surface: #ffffff; --border: #e8e8e4; --text: #1a1a18; --text-sub: #6b6b65; --text-muted: #9c9c94; --accent: #d97757; --accent-light: #fdf0eb; --accent-border: #f0c4b0; --green: #2d6a4f; --green-light: #edf7f2; --green-border: #a8d5bf; --amber: #9a6700; --amber-light: #fef9ec; --amber-border: #f0d080; --serif: Georgia,"Times New Roman",serif; --sans: -apple-system,"Segoe UI",sans-serif; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.7; }
+    .page-header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 32px; }
+    .page-header-inner { max-width: 860px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .site-name { font-family: var(--serif); font-size: 17px; color: var(--text); text-decoration: none; }
+    .back-link { font-size: 13px; color: var(--text-sub); text-decoration: none; }
+    main { max-width: 720px; margin: 0 auto; padding: 48px 32px 80px; }
+    .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    h1 { font-family: var(--serif); font-size: clamp(26px,4vw,38px); font-weight: 400; line-height: 1.2; color: var(--text); margin-bottom: 16px; }
+    .intro { font-size: 16px; color: var(--text-sub); line-height: 1.75; margin-bottom: 32px; }
+    h2 { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--text); margin: 44px 0 12px; }
+    h3 { font-size: 14px; font-weight: 600; color: var(--text); margin: 20px 0 8px; }
+    p { color: var(--text-sub); margin-bottom: 14px; }
+    strong { color: var(--text); font-weight: 600; }
+    a { color: var(--accent); }
+    .divider { height: 1px; background: var(--border); margin: 36px 0; }
+    .updated-tag { font-size: 12px; color: var(--text-muted); margin-top: 8px; margin-bottom: 40px; display: block; }
+    .stat-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap: 12px; margin: 24px 0; }
+    .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; }
+    .stat-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+    .stat-value { font-family: var(--serif); font-size: 24px; color: var(--text); line-height: 1; margin-bottom: 4px; }
+    .stat-sub { font-size: 12px; color: var(--text-muted); }
+    .highlight-box { background: var(--accent-light); border: 1px solid var(--accent-border); border-radius: 10px; padding: 20px 24px; margin: 24px 0; }
+    .highlight-box p { color: var(--text); margin-bottom: 0; }
+    .info-box { background: var(--green-light); border: 1px solid var(--green-border); border-radius: 10px; padding: 20px 24px; margin: 24px 0; }
+    .info-box p { color: var(--green); margin-bottom: 0; }
+    .warn-box { background: var(--amber-light); border: 1px solid var(--amber-border); border-radius: 10px; padding: 20px 24px; margin: 24px 0; }
+    .warn-box p { color: var(--amber); margin-bottom: 0; }
+    .check-list { list-style: none; margin: 16px 0; }
+    .check-list li { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--text-sub); }
+    .check-list li:last-child { border-bottom: none; }
+    .tick { width: 20px; height: 20px; border-radius: 50%; background: var(--green-light); border: 1px solid var(--green-border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 11px; color: var(--green); }
+    .cross { width: 20px; height: 20px; border-radius: 50%; background: #fdf2f1; border: 1px solid #f5c6c2; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 11px; color: #c0392b; }
+    .steps { list-style: none; counter-reset: steps; margin: 20px 0; }
+    .steps li { counter-increment: steps; display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--border); }
+    .steps li:last-child { border-bottom: none; }
+    .steps li::before { content: counter(steps); font-family: var(--serif); font-size: 18px; color: var(--accent); min-width: 28px; margin-top: 1px; }
+    .steps li div { flex: 1; }
+    .steps li strong { display: block; margin-bottom: 4px; color: var(--text); }
+    .faq-item { padding: 20px 0; border-bottom: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+    .faq-a { font-size: 14px; color: var(--text-sub); line-height: 1.7; margin: 0; }
+    .cta-box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 28px 32px; margin-top: 48px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .cta-title { font-family: var(--serif); font-size: 20px; color: var(--text); margin-bottom: 6px; }
+    .cta-sub { font-size: 13px; color: var(--text-sub); }
+    .cta-btn { background: var(--accent); color: #fff; border: none; border-radius: 8px; padding: 12px 24px; font-size: 14px; font-weight: 500; text-decoration: none; display: inline-block; }
+    .breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 28px; }
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+    .breadcrumb span { margin: 0 8px; }
+    .related-links { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 12px; margin: 24px 0; }
+    .related-link { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; text-decoration: none; color: var(--text); font-size: 13px; }
+    .related-link:hover { border-color: var(--accent); }
+    .related-link-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+    footer { border-top: 1px solid var(--border); padding: 24px 32px; font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 48px; }
+    @media(max-width:600px){main{padding:32px 20px 60px;}.page-header{padding:0 20px;}.cta-box{padding:20px;flex-direction:column;}}
+</style>
+</head>
+<body>
+<header class="page-header"><div class="page-header-inner"><a href="/" class="site-name">Free Childcare Hours</a><a href="/" class="back-link">← Back to eligibility checker</a></div></header>
+<main>
+  <nav class="breadcrumb"><a href="/">Home</a><span>›</span><a href="/guide">Guides</a><span>›</span><span>Calculator</span></nav>
+  <div class="eyebrow">Calculator · Updated 2025</div>
+  <h1>How Much Will You Save? Use Our Free Childcare Cost Calculator</h1>
+  <p class="intro">Our free childcare calculator shows you exactly how much 30-hour childcare and Tax-Free Childcare will save your family — including the impact of salary sacrifice on your eligibility and take-home pay.</p>
+  <span class="updated-tag">Last updated: March 2025 · Based on 2024/25 HMRC rules</span>
+  
+<h2>What our calculator shows you</h2>
+<ul class="check-list">
+  <li><span class="tick">✓</span><div><strong>Your eligibility</strong> — whether you qualify for 30-hour free childcare and Tax-Free Childcare based on your incomes</div></li>
+  <li><span class="tick">✓</span><div><strong>Annual saving from free hours</strong> — based on your local nursery rate or the UK average</div></li>
+  <li><span class="tick">✓</span><div><strong>Tax-Free Childcare top-up</strong> — the government's 20% contribution on additional costs</div></li>
+  <li><span class="tick">✓</span><div><strong>Full household take-home pay</strong> — including income tax, National Insurance, and student loan deductions</div></li>
+  <li><span class="tick">✓</span><div><strong>Salary sacrifice impact</strong> — how pension, cycle to work, and EV schemes affect your eligibility and take-home pay</div></li>
+  <li><span class="tick">✓</span><div><strong>Countdown to eligibility</strong> — how many days until your child qualifies, based on their date of birth</div></li>
+</ul>
+<h2>How to use the calculator</h2>
+<ol class="steps">
+  <li><div><strong>Enter your child's date of birth</strong><br>In the Settings tab. The calculator shows your personalised countdown to eligibility.</div></li>
+  <li><div><strong>Enter your salary details</strong><br>In the Income &amp; Tax tab. Choose Simple mode for a single annual figure, or Advanced mode to enter monthly amounts.</div></li>
+  <li><div><strong>Add salary sacrifice schemes</strong><br>Toggle on pension, cycle to work, or EV schemes to see how they affect your eligibility and take-home pay.</div></li>
+  <li><div><strong>Enter your nursery rate</strong><br>In the Better Off tab. Enter your local hourly rate or use the UK average to see your annual saving.</div></li>
+</ol>
+<h2>How the savings are calculated</h2>
+<p>The calculator uses the following methodology:</p>
+<div class="highlight-box"><p><strong>Annual saving = Free hours per week × 38 term weeks × Your hourly nursery rate</strong><br><br>Plus Tax-Free Childcare top-up of up to £2,000 per year per child on additional costs.</p></div>
+<h2>The salary sacrifice calculation</h2>
+<p>For pension salary sacrifice, the calculator uses 2024/25 income tax rates and National Insurance rates to show the exact saving. For EV car schemes, it applies the current BIK rate (2% for pure EVs) to calculate the net benefit after BIK tax. This gives you a realistic picture of the true cost or saving of each scheme.</p>
+<div class="info-box"><p><strong>Note on accuracy:</strong> The calculator provides estimates based on standard PAYE income. It does not account for complex tax situations such as rental income, investment income, or complex Self Assessment scenarios. Always verify with HMRC or a qualified accountant for your specific situation.</p></div>
+
+  <h2>Frequently asked questions</h2>
+  <div class="faq-item"><div class="faq-q">How accurate is the childcare calculator?</div><p class="faq-a">The calculator uses 2024/25 UK tax rates and HMRC rules to provide accurate estimates for standard PAYE employees. Results may vary for those with complex tax situations.</p></div>
+<div class="faq-item"><div class="faq-q">Does the calculator work for self-employed parents?</div><p class="faq-a">The income and eligibility checks work for self-employed parents, but the take-home pay calculation is designed for PAYE. Self-employed parents should use their net profit figure.</p></div>
+<div class="faq-item"><div class="faq-q">Is the calculator free to use?</div><p class="faq-a">Yes — completely free, with no sign-up required. Your data is stored only on your own device.</p></div>
+  <div class="divider"></div>
+  <h2>Related guides</h2>
+  <div class="related-links"><a href="/30-hour-free-childcare-eligibility" class="related-link"><div class="related-link-label">Eligibility</div>30-Hour Eligibility Guide</a>
+<a href="/guide" class="related-link"><div class="related-link-label">Guide</div>Tax-Free Childcare Complete Guide</a>
+<a href="/how-to-apply-tax-free-childcare" class="related-link"><div class="related-link-label">How-to</div>How to Apply</a></div>
+  <div class="cta-box"><div><div class="cta-title">Check your eligibility now</div><div class="cta-sub">Use our free calculator to see if you qualify and how much you'll save.</div></div><a href="/" class="cta-btn">Open the checker →</a></div>
+</main>
+<footer><p>For informational purposes only. Verify at <a href="https://www.gov.uk/tax-free-childcare">gov.uk</a>. © 2025 freechildcarehours.co.uk</p></footer>
+</body></html>
